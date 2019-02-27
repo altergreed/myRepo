@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Внутрення страницы Журнала ТеремЪ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="sticky-top">
+        <div class="container">
+            <div class="logo d-none d-sm-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 87 89" width="87" height="89">
+                    <defs>
+                        <image width="87" height="89" id="img1" href="data:image/png;base64,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" />
+                    </defs>
+                    <style>
+                        tspan { white-space:pre }
+	</style>
+                    <g id="head">
+                        <use id="Logo" href="#img1" x="0" y="0" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="logo-mobile d-flex d-sm-none">
+                <svg class="ip-inner" width="50" height="80" viewbox="30 10 75 50" enable-background="new 0 0 139 167" preserveaspectratio="xMidYMin meet">
+                    <path class="logo-bg" fill="#AC1E23" d="M3.2,0v167h119.9c7,0,12.7-0,12.9-0V0H0z"></path>
+                    <g class="logo-upper-group">
+                        <path class="logo-upper" fill="#FFFFFF" d="M50.7,81.3c0-1.3,0.6-2.5,1.3-3.3l0,0c0.8-0.8,2-1.3,3.3-1.3c1.3,0,2.5,0.6,3.3,1.3l0,0
+                                                                  c0.8,0.8,1.3,2,1.3,3.3h-1.6c0-0.8-0.4-1.6-0.8-2.2l0,0c-0.6-0.6-1.3-0.8-2.2-0.8c-0.8,0-1.6,0.4-2.2,0.8l0,0
+                                                                  c-0.6,0.6-0.8,1.3-0.8,2.2H50.7L50.7,81.3L50.7,81.3L50.7,81.3z"></path>
+                        <path class="logo-upper" fill="#FFFFFF" d="M76.8,81.3c0-1.3,0.6-2.5,1.3-3.3l0,0c0.8-0.8,2-1.3,3.3-1.3s2.5,0.6,3.3,1.3l0,0c0.8,0.8,1.3,2,1.3,3.3
+                                                                  h-1.6c0-0.8-0.4-1.6-0.8-2.2l0,0c-0.6-0.6-1.3-0.8-2.2-0.8c-0.8,0-1.6,0.4-2.2,0.8l0,0c-0.6,0.6-0.8,1.3-0.8,2.2H76.8L76.8,81.3
+                                                                  L76.8,81.3L76.8,81.3z"></path>
+                        <path class="logo-upper" fill="#FFFFFF" d="M63.8,81.3c0-1.3,0.6-2.5,1.3-3.3l0,0c0.8-0.8,2-1.3,3.3-1.3s2.5,0.6,3.3,1.3c0.8,0.8,1.3,2,1.3,3.3h-1.6
+                                                                  c0-0.8-0.4-1.6-0.8-2.2c-0.6-0.6-1.3-0.8-2.2-0.8c-0.8,0-1.6,0.4-2.2,0.8l0,0c-0.6,0.6-0.8,1.3-0.8,2.2H63.8L63.8,81.3L63.8,81.3
+                                                                  L63.8,81.3z"></path>
+                        <polygon class="logo-upper" fill="#FFFFFF" points="70.5,66.4 69.6,67.9 72.1,68.4 69.6,69 70.2,70.3 68.9,69.6 68.4,72.3 67.9,69.5 66.4,70.4
+                                                                     67.3,69 64.8,68.4 67.3,67.8 66.7,66.5 68,67.3 68.4,64.5 69,67.4 70.5,66.4	"></polygon>
+                        <path class="logo-upper" fill="#FFFFFF" d="M92.1,74.3H77.4c0.5-0.5,1-0.9,1.4-1.4h13.3V74.3L92.1,74.3z M76.4,74.3h-1.5c0,0,0.2-0.2,0.3-0.3
+                                                                  c3.7-4.3,1.8-7.6-0.8-10c-0.9-0.8-2-1.6-2.9-2.3c-1.2-0.9-2.3-1.6-2.4-2.1l-0.5-2l-0.5,2c-0.1,0.5-1.1,1.2-2.4,2.1
+                                                                  c-0.9,0.7-2,1.4-2.9,2.3c-2.7,2.5-4.5,5.7-0.8,10c0.1,0.1,0.3,0.3,0.3,0.3h-1.5c0,0-0.2-0.2-0.3-0.3c-3.7-2.9-3.5-5.4-1.8-7.6
+                                                                  c1-1.4,2.7-2.8,4.4-4.2c2.1-1.7,4.5-3.4,5.7-5.3l0,0l0,0c1.1,1.9,3.6,3.6,5.7,5.3c1.7,1.4,3.3,2.7,4.4,4.2
+                                                                  c1.7,2.3,1.9,4.6-1.8,7.6C76.6,74.1,76.4,74.3,76.4,74.3L76.4,74.3z M44.7,74.3v-1.4h13.3c0.5,0.5,0.9,1,1.4,1.4H44.7L44.7,74.3z
+                                                                  M52.4,62.3h0.9v2.6h-0.9V62.3L52.4,62.3z M54.3,62.3h0.9v2.6h-0.9V62.3L54.3,62.3z M56.2,62.3h0.9v2.6h-0.9V62.3L56.2,62.3z
+                                                                  M58.1,62.3H59v1.9l-0.8,0.8H58L58.1,62.3L58.1,62.3z M59.9,62.3h0.9v0.1l-0.9,0.8V62.3L59.9,62.3z M76.9,62.3v0.9L76,62.4v-0.1
+                                                                  H76.9L76.9,62.3z M60.7,54.8h15.5v6.3H74c-2-1.7-4.3-3.4-5.2-5.2l0,0l-0.4-0.8l-0.4,0.8l0,0c-0.8,1.8-3.2,3.5-5.2,5.2h-2.2V54.8
+                                                                  L60.7,54.8z M77.9,62.3h0.9v2.6h-0.3l-0.8-0.8L77.9,62.3L77.9,62.3z M79.8,62.3h0.9v2.6h-0.9V62.3L79.8,62.3z M81.7,62.3h0.9v2.6
+                                                                  h-0.9V62.3L81.7,62.3z M83.6,62.3h0.9v2.6h-0.9V62.3L83.6,62.3z M85.3,64.9v-3.6c0.6-0.1,0.9-0.7,0.9-1.2c0-0.7-0.6-1.2-1.2-1.2
+                                                                  c-0.7,0-1.2,0.6-1.2,1.2c0,0.6,0.4,1,0.9,1.2v0.2h-6.8v-7h3.5l-7.2-3.1l-2.8-4.2l-2.9-4.3c0.7,0,1.2-0.6,1.2-1.2
+                                                                  c0-0.7-0.6-1.2-1.2-1.2c-0.7,0-1.2,0.6-1.2,1.2c0,0.7,0.6,1.2,1.2,1.2l-2.9,4.3l-2.8,4.2l-7.2,3.1H59v7h-6.8v-0.2
+                                                                  c0.6-0.1,0.9-0.7,0.9-1.2c0-0.7-0.6-1.2-1.2-1.2s-1.2,0.6-1.2,1.2c0,0.6,0.4,1,0.9,1.2v3.6L43.8,72v3H46v6.2h1.2V75
+                                                                  c5.6,0,11.1,0,16.6,0c-0.8-0.9-2.5-2.4-3-4.6c-0.6-2,0.3-3.9,2.5-5.9c0.9-0.8,1.9-1.5,2.8-2.2h0.1c1.1-0.8,1.9-1.3,2.3-1.8
+                                                                  c0.5,0.5,1.1,1,2.3,1.8h0.1c0.8,0.7,1.9,1.3,2.8,2.2c2.2,2,3,3.9,2.5,5.9c-0.7,2.3-2.2,3.6-3,4.6c5.6,0,11.1,0,16.6,0v6.2h1.2V75
+                                                                  h2.2v-3L85.3,64.9L85.3,64.9z"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="navigation">
+                <div class="top d-flex justify-content-between border-bottom">
+                    <ul class="d-none d-md-flex">
+                        <li>
+                            <a href="#">Официальный сайт компании &laquo;ТеремЪ&raquo;</a>
+                        </li>
+                        <li class="d-md-none d-lg-block">
+                            <a href="#">Каталог домов и бань</a>
+                        </li>
+                        <li class="d-md-none d-lg-block">
+                            <a href="#">О компании</a>
+                        </li>
+                        <li>
+                            <a href="#" class="red-map-marker"><i class="fas fa-map-marker-alt"></i> Наш выставочный комплекс</a>
+                        </li>
+                    </ul>
+                    <ul class="top-panel-text d-flex">
+                        <li>
+                            <a class="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </li>
+                        <span>|</span>
+                        <li>
+                            <a href="#">Подписка</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <div class="navbar-container">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                            <a class="site-name navbar-brand" href="#">Журнал ТеремЪ</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Строительство и ремонт</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Сад и огород</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Правовое поле</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">Новости</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">Наши соседи</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Умный дом</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Жизнь за городом</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="blog-article mt-4">
+                <div class="row">
+                    <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                        <div class="social-repost">
+                            <span>Поделиться статьей в соцсетях</span>
+                            <div>
+                                <ul>
+                                    <li class="FB"><a href="#"></a></li>
+                                    <li class="VK"><a href="#"></a></li>
+                                    <li class="TW"><a href="#"></a></li>
+                                    <li class="OD"><a href="#"></a></li>
+                                    <li class="MAIL"><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-11 col-md-8 col-lg-8">
+                        <a href="#" class="btn-link">Наши соседи</a>
+                        <div class="social-activity">
+                            <span><i class="far fa-thumbs-up"></i></span><span class="count">123</span><span><i class="far fa-comment-dots"></i></span><span class="count">9</span>
+                        </div>
+                        <div class="blog-article-title">Как избавиться<br>от кротов<br>на своем участке</div>
+                        <p class="lead">Во всем известном чешском мультсериале крот – доброе и отзывчивое животное.
+                            В реальности же зверёк этот далеко не симпатичный и доставляет массу хлопот жителям загородных домов и дачникам: своими подземными коммуникациями крот вредит корням культурных растений. Рассказываем о самых популярных способах борьбы с этой напастью. </p>
+                        <img class="d-flex w-100" src="img/article-img-1.png">
+                        <div>Крот: быстрый и осторожный</div>
+                        <p>Прежде чем начать неравный бой с кротами, стоит узнать об особенностях их жизни. Крот живёт в норе, которая чаще всего находится в холмике и состоит из сложной системы ходов и логовища, расположенного посередине. Оно устлано мягкими веществами, и к нему ведёт несколько ходов. Вопреки распространённому заблуждению, кроты не являются грызунами и способны повредить растения, лишь когда роют тоннели. Тоннели различаются на кормовые (те самые холмики и гребни на газоне) и глубже – соединяющие кормовые в единую сеть.</p>
+                        <p>Кстати, кроты не единственные животные, способные разрыхлять землю на участке. Этим «увлекаются» и суслики, и мыши-полёвки. Определить вредителя можно по форме разрытой земли: кроты оставляют холмики в виде вулкана, суслики – кучки в виде подковы, а мыши-полёвки – лишь множество мелких следов на земле (их норы не видны на поверхности, но они есть – сразу под ней и около 5 см в ширину).</p>
+                        <p>Если животные ещё не появились на вашем участке, но вполне могут, можно попробовать предотвратить их появление. Потрудиться придётся изрядно, ведь из шифера, рубероида или других материалов необходимо сделать ограждение по всему периметру участка. Оно должно быть закопано в землю на глубину не менее 50-60 см и возвышаться над ней до 20 см – такое ограждение предотвратит попадание кротов на участок.</p>
+                        <p>Если участок уже подвергся атаке, строить ограждения бесполезно. А вот попробовать выкурить крота неприятными ему посадками вполне можно. Известно, что кротам не нравятся чёрная фасоль, конопля, бобы, перец, чеснок и лук, нарциссы, бархатцы, а также молочай и касторовое растение (клещевина): все они отпугивают животных своим запахом. Однако последние два ядовиты и должны находиться вне доступа детей и домашних животных.</p>
+                        <p>Некоторые дачники используют в борьбе с кротами воду: раскапывают кротовую кучу и в вертикальную норку вливают несколько вёдер воды – до тех пор, пока она не польётся из другого тоннеля, а крот не выплывет наружу. Но этот метод срабатывает далеко не всегда, поскольку, во-первых, система кротовых ходов очень разветвлённая и многоуровневая, во-вторых, при заливе норы может образоваться воздушная пробка, а, в-третьих, скоростные показатели крота вполне позволяют ему убежать. </p>
+                        <p>Пожалуй, из всех способов борьбы с кротами применение звука, ультразвука и вибрации – самый современный, эффективный и при этом гуманный: крот остаётся цел и невредим и лишь вынужден убежать. Для борьбы с кротами используются звуковые и ультразвуковые грунтоизгонятели – приборы вставляются прямо в нору. Работать они могут как на простых батарейках, так и на солнечных. Есть ещё и вибрационные устройства для отпугивания кротов – они ставятся по периметру участка в четырёх точках. Как показывает практика, быстрее всего кроты убегают от вибрации – это занимает 3-4 недели. </p>
+                        <p>Сегодня отравы для кротов выпускаются чаще всего в гранулированной форме: гранулы создаются с учётом пищевых предпочтений крота, их запах и вкус очень привлекательны для него. Однако травится крот неохотно: он – хищник и любит «живую» еду, поэтому аппетитно ползающих червей променяет на рассыпанные гранулы лишь в момент полного отчаяния.</p>
+                        <p>О стопроцентной эффективности этого способа говорить не приходится: чаще всего кроты успешно обходят ловушки и капканы. Но в первом случае попытка не пытка: можно установить кротоловки (они соизмеримы с диаметром норы) и ждать. Пойманного крота можно отвезти подальше от своего участка и отпустить с миром на все четыре стороны. Менее гуманный способ – установить прямо в прорытые тоннели капкан или обычную мышеловку.</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+                        <div class="banner"><img class="d-flex w-100" src="img/banner.png"></div>
+                        <div class="fresh-news">
+                            <a href="#" class="fresh-title">Самое свежее на сегодня</a>
+                            <div class="grey-new">
+                                <div class="grey-new-title">Лучшие дома 2018 года. Выбор клиентов компании &laquo;ТеремЪ&raquo;</div>
+                                <div class="social-activity">
+                                    <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                </div>
+                            </div>
+                            <div class="fresh-new">
+                                <div class="fresh-new-title">Новогодний стол. Что особенного приготовить на праздничное застолье, чтобы не вышло как всегда</div>
+                                <div class="social-activity">
+                                    <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                </div>
+                            </div>
+                            <div class="fresh-new">
+                                <div class="grey-new-title">Праздник во дворе. Готовим участок к активным новогодним развлечениям</div>
+                                <div class="social-activity">
+                                    <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                </div>
+                            </div>
+                            <div class="fresh-new">
+                                <div class="grey-new-title">Лучшие дома 2018 года. Выбор клиентов компании &laquo;ТеремЪ&raquo;</div>
+                                <div class="social-activity">
+                                    <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-with-btn"><img class="d-flex w-100" src="img/banner-with-btn.png"></div>
+                        <div class="tags"></div>
+                        <div class="expert-opinion-with-btn"><img class="d-flex w-100" src="img/expert-opinion-with-btn.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-industry-news border-top mt-3 mt-sm-4 mt-md-5">
+                <div class="title-industry-news d-flex justify-content-center">Новости отрасли</div>
+                <div class="industry-slider">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item active">
+                                    <div class="item">
+                                        <img src="img/industry-new-img-1.png">
+                                        <div class="item-caption">
+                                            <a href="#" class="btn-link white">Новости</a>
+                                            <div class="industry-title">Успейте построить дом без проволочек</div>
+                                            <div class="social-activity white">
+                                                <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item active">
+                                    <div class="item">
+                                        <img src="img/industry-new-img-2.png">
+                                        <div class="item-caption">
+                                            <a href="#" class="btn-link white">Новости</a>
+                                            <div class="industry-title">Праздник во дворе. Готовим участок к активным</div>
+                                            <div class="social-activity white">
+                                                <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item active">
+                                    <div class="item">
+                                        <img src="img/industry-new-img-3.png">
+                                        <div class="item-caption">
+                                            <a href="#" class="btn-link white">Новости</a>
+                                            <div class="industry-title">Успейте построить дом без проволочек</div>
+                                            <div class="social-activity white">
+                                                <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item active">
+                                    <div class="item">
+                                        <img class="" src="img/industry-new-img-4.png">
+                                        <div class="item-caption">
+                                            <a href="#" class="btn-link white">Новости</a>
+                                            <div class="industry-title">Готовим участок к активным новогодним развлечениям</div>
+                                            <div class="social-activity white">
+                                                <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="item">
+                                        <img class="" src="img/industry-new-img-5.png">
+                                        <div class="item-caption">
+                                            <a href="#" class="btn-link white">Новости</a>
+                                            <div class="industry-title">Успейте построить дом без проволочек</div>
+                                            <div class="social-activity white">
+                                                <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span>9</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a class="btn-link text-center" href="#">Посмотреть все новости</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-7">
+                    <div class="logo d-none d-sm-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 87 89" width="87" height="89">
+                            <defs>
+                                <image width="87" height="89" id="img1" href="data:image/png;base64,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" />
+                            </defs>
+                            <style>
+                                tspan { white-space:pre }
+	</style>
+                            <g id="head">
+                                <use id="Logo" href="#img1" x="0" y="0" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="site-name">Журнал ТеремЪ</div>
+                    <p class="description">Журнал «Теремъ» – онлайн журнал о загородной жизни от строительной компании «Теремъ». За 10 лет работы компании на рынке деревянного малоэтажного домостроения, мы много раз убеждались, что жизнь в своем доме может быть спокойной, радостной и одновременно непростой. Журнал был задуман как информационный портал для тех, кто хочет сделать свою загородную жизнь комфортной и интересной.</p>
+                    <button type="button" class="btn-subscribe">Подписаться на журнал</button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="category">Рубрики</div>
+                    <ul class="category-list">
+                        <li>
+                            <a href="#">Строительство и ремонт</a>
+                        </li>
+                        <li>
+                            <a href="#">Сад и огород</a>
+                        </li>
+                        <li>
+                            <a href="#">Правовое поле</a>
+                        </li>
+                        <li>
+                            <a href="#">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#">Наши соседи</a>
+                        </li>
+                        <li>
+                            <a href="#">Умный дом</a>
+                        </li>
+                        <li>
+                            <a href="#">Жизнь за городом</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="social">Мы в соцсетях</div>
+                    <ul class="social-icon d-flex flex-fill justify-content-center justify-content-sm-start">
+                        <div class="flex-column">
+                            <li>
+                                <a href="#"><img src="social/Terem_fbook_icon.png"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="social/Terem_insta_icon.png"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="social/Terem_tw_icon.png"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="social/Terem_VK_icon.png"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="social/gplus.png"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="social/od.png"></a>
+                            </li>
+
+                            <li>
+                                <a href="#"><img src="social/map.png"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="social/y.png"></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                &copy; Теремъ-про, 2009 - 2019. Все материалы данного сайта являются объектами авторского права (в том числе дизайн). Запрещается копирование, распространение (в том числе путем копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя. Cайт не является публичной офертой.
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: false,
+            margin: 25,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    mergeFit: true,
+                    margin: 25,
+                    items: 1,
+                    nav: true,
+                    navText: ['<a class="carousel-control-prev" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>',
+                        '<a class="carousel-control-next" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>'
+                    ],
+                    dots: false
+                },
+                576: {
+                    items: 2,
+                    nav: true,
+                    navText: ['<a class="carousel-control-prev" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>',
+                        '<a class="carousel-control-next" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>'
+                    ],
+                    dots: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    navText: ['<a class="carousel-control-prev" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>',
+                        '<a class="carousel-control-next" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>'
+                    ],
+                    loop: true,
+                    dots: false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
