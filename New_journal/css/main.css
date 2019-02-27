@@ -35,8 +35,12 @@ body {
 
 /** HEADER **/
 
-header{
+header {
     background-color: #ffffff;
+}
+
+header .container {
+    overflow-x: hidden;
 }
 
 .logo {
@@ -65,6 +69,10 @@ header{
 
 .navigation .top ul li {
     padding-right: 23px;
+}
+
+.navigation .top ul li:last-child {
+    padding-right: 0;
 }
 
 .navigation .top ul li a {
@@ -126,11 +134,16 @@ header{
     white-space: nowrap;
 }
 
+.navigation .bottom .navbar-collapse {
+    text-align: right;
+}
+
 .navigation .bottom .navbar-container .navbar {
-    padding: .5rem 0;
+    padding: 0;
 }
 
 .navigation .bottom .navbar-nav {
+    margin-left: auto;
     padding-top: 2px;
     font-size: 18px;
     font-family: Reforma, Arial, sans-serif;
@@ -634,8 +647,9 @@ footer .social-icon li {
     margin-bottom: 19px;
 }
 
-footer .social-icon li:last-child {
+footer .social-icon li:nth-child(4n) {
     margin-right: 0;
+
 }
 
 footer .social-icon li:nth-child(4n+1) {
@@ -656,170 +670,255 @@ footer .social-icon li:nth-child(4n+1) {
 /* Extra small devices (portrait phones, less than 576px)*/
 /* No media query since this is the default in Bootstrap*/
 @media (max-width: 575.9px) {
-    .navigation .bottom .site-name{
+    .navigation .bottom .site-name {
         font-size: 36px;
         height: fit-content;
     }
 
-    .main-top-design .news-main-design .big-main-slider .carousel-item .slide-title, .grey-design .big-grey-slider .carousel-item .slide-title{
+    .main-top-design .news-main-design .big-main-slider .carousel-item .slide-title,
+    .grey-design .big-grey-slider .carousel-item .slide-title {
         font-size: 18px;
     }
 
-    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-next, .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-prev{
+    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-next,
+    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-prev {
         display: none;
     }
 
-    .grey-design .big-grey-slider .carousel-item .carousel-caption, .main-top-design .news-main-design .big-main-slider .carousel-item .carousel-caption{
+    .grey-design .big-grey-slider .carousel-item .carousel-caption,
+    .main-top-design .news-main-design .big-main-slider .carousel-item .carousel-caption {
         padding: 0px 25px 25px 25px;
     }
-    .main-top-design .sidebar-announce .announce-new:last-child{
+
+    .main-top-design .sidebar-announce .announce-new:last-child {
         margin-bottom: 32px;
     }
 
-    .long-new, .small-new {
+    .long-new,
+    .small-new {
         margin-bottom: 2rem;
     }
 
-    .main-top-design .news-main-design .main-small-design .main-small-new{
+    .main-top-design .news-main-design .main-small-design .main-small-new {
         margin-bottom: 2rem;
     }
 
-    .grey-design .title-grey-design{
+    .grey-design .title-grey-design {
         padding-bottom: 25px;
     }
 
-    .social-activity{
+    .social-activity {
         font-size: 10px;
     }
 
-    .small-news-design .small-new .small-new-title, .long-news-design .long-new .long-new-title {
+    .small-news-design .small-new .small-new-title,
+    .long-news-design .long-new .long-new-title {
         font-size: 14px;
         padding-bottom: 5px;
     }
 
-    .container{
+    .container {
         padding: 0 20px;
     }
 
-    .copyright, footer .category, footer .category-list, footer .site-name, footer .description, footer .social  {
+    .copyright,
+    footer .category,
+    footer .category-list,
+    footer .site-name,
+    footer .description,
+    footer .social {
         text-align: center;
     }
 
-    footer .category, footer .social{
+    footer .category,
+    footer .social {
         padding-top: 35px;
     }
 
-    footer .btn-subscribe, footer .social-icon {
-        margin-left: auto!important;
-        margin-right: auto!important;
+    footer .btn-subscribe,
+    footer .social-icon {
+        margin-left: auto !important;
+        margin-right: auto !important;
         margin-bottom: 0;
     }
 
     .grey-design {
-    padding: 15px 25px 28px 25px;
+        padding: 15px 25px 28px 25px;
+    }
+
+    .navigation .top .top-panel-text {
+        margin-left: auto;
     }
 }
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width:768px) {
-    footer .btn-subscribe{
+@media (min-width: 576px) and (max-width:767px) {
+    footer .btn-subscribe {
         margin-bottom: 10px;
     }
 
-    .long-new, .small-new {
+    .long-new,
+    .small-new {
         margin-bottom: 2rem;
     }
 
-    .navigation .bottom .site-name{
+    .navigation .bottom .site-name {
         font-size: 36px;
         height: fit-content;
     }
 
-    .main-top-design .news-main-design .big-main-slider .carousel-item .slide-title, .grey-design .big-grey-slider .carousel-item .slide-title{
+    .main-top-design .news-main-design .big-main-slider .carousel-item .slide-title,
+    .grey-design .big-grey-slider .carousel-item .slide-title {
         font-size: 18px;
     }
 
-    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-next, .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-prev{
+    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-next,
+    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-prev {
         display: none;
     }
 
-    .grey-design .big-grey-slider .carousel-item .carousel-caption, .main-top-design .news-main-design .big-main-slider .carousel-item .carousel-caption{
+    .grey-design .big-grey-slider .carousel-item .carousel-caption,
+    .main-top-design .news-main-design .big-main-slider .carousel-item .carousel-caption {
         padding: 0px 25px 25px 25px;
     }
-    .main-top-design .sidebar-announce .announce-new:last-child{
+
+    .main-top-design .sidebar-announce .announce-new:last-child {
         margin-bottom: 32px;
     }
-    .grey-design .title-grey-design{
+
+    .grey-design .title-grey-design {
         padding-bottom: 25px;
     }
 
     .grey-design {
-    padding: 15px 25px 28px 25px;
+        padding: 15px 25px 28px 25px;
     }
 
-    .small-news-design .small-new .small-new-title, .long-news-design .long-new .long-new-title {
+    .small-news-design .small-new .small-new-title,
+    .long-news-design .long-new .long-new-title {
         font-size: 14px;
         padding-bottom: 5px;
     }
 
-    .main-top-design .news-main-design .main-small-design .main-small-new{
+    .main-top-design .news-main-design .main-small-design .main-small-new {
         margin-bottom: 2rem;
+    }
+
+    .navigation .top .top-panel-text {
+        margin-left: auto;
     }
 }
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width:992px) {
-    .main-top-design .news-main-design .main-small-design .main-small-new{
+@media (min-width: 768px) and (max-width:991px) {
+    .main-top-design .news-main-design .main-small-design .main-small-new {
         margin-bottom: 1rem;
     }
 
-    .main-top-design .sidebar-announce .title-announce span{
+    .main-top-design .sidebar-announce .title-announce span {
         padding-left: 0;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .main-top-design .sidebar-announce .title-announce{
+    .main-top-design .sidebar-announce .title-announce {
         font-size: 28px;
     }
 
-    .small-news-design .small-new .small-new-title, .long-news-design .long-new .long-new-title {
+    .small-news-design .small-new .small-new-title,
+    .long-news-design .long-new .long-new-title {
         font-size: 16px;
         padding-bottom: 5px;
     }
 
     .grey-design {
-    padding: 15px 25px 28px 25px;
+        padding: 15px 25px 28px 25px;
     }
 
-    .main-top-design .sidebar-announce .announce-new:last-child{
+    .main-top-design .sidebar-announce .announce-new:last-child {
         margin-bottom: 32px;
     }
 
-    .long-new, .small-new {
+    .long-new,
+    .small-new {
         margin-bottom: 2rem;
     }
 
-    .main-top-design .news-main-design .big-main-slider .carousel-item .slide-title{
+    .main-top-design .news-main-design .big-main-slider .carousel-item .slide-title {
         font-size: 18px;
     }
 
-    .grey-design .big-grey-slider .carousel-item .slide-title{
+    .grey-design .big-grey-slider .carousel-item .slide-title {
         font-size: 24px;
     }
-    .grey-design .big-grey-slider .carousel-item .carousel-caption, .main-top-design .news-main-design .big-main-slider .carousel-item .carousel-caption{
+
+    .grey-design .big-grey-slider .carousel-item .carousel-caption,
+    .main-top-design .news-main-design .big-main-slider .carousel-item .carousel-caption {
         padding: 0px 30px 30px 30px;
     }
 
-    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-next, .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-prev{
+    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-next,
+    .main-top-design .news-main-design .big-main-slider .carousel .carousel-control-prev {
         width: 7%;
         z-index: 999;
+    }
+
+    .navigation .bottom .site-name {
+        font-size: 32px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .navigation .top {
+        padding-left: 7px;
+    }
+
+    .navigation .top ul li {
+        padding-right: 10px;
+    }
+}
+
+@media (min-width:992px) and (max-width: 1199px) {
+    .main-top-design .sidebar-announce .title-announce span {
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main-top-design .sidebar-announce .title-announce {
+        font-size: 26px;
+    }
+
+    .navigation .bottom .site-name {
+        font-size: 32px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .navigation .bottom .navbar-nav {
+        font-size: 16px;
+    }
+
+    .navigation .top {
+        padding-left: 5px;
+    }
+
+    .navigation .top ul li {
+        padding-right: 15px;
+    }
+
+    .navigation .bottom .navbar-nav .nav-item {
+        padding-left: 0.7em;
+    }
+
+    .navigation .bottom .navbar-nav .nav-link {
+        padding-left: 0;
     }
 }
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 1340px) {
-    .container{
+    .container {
         max-width: 1280px;
     }
 }
