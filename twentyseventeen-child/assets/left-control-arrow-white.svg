@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+	<defs>
+		<image width="24" height="24" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAAXNSR0IB2cksfwAAAIpQTFRFAAAAi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLZmt4cgAAAC50Uk5TACiCw+//JrH852b47IY1BYD9iQv2SrTtS+HzXCPobRr+Etn79JPN9aYDBr/3j/iIdNIAAAC/SURBVHicdVLXAoMwCETNGTVqnG21ey/7/79XV7QPhZdwkHAXgGgwy3YEIBzbol9zJQDP9732kO4cDxTCKNZEOo5CqMDEE6RZbkCepUjG+yjK37plgf6Nq9IuvliupkyqOh6JrEMV6rXJZJCtToR9/c0W9c7whLDIRjSgfXWoR1aKYJODeETH0/lyHdwYDglPT0pv6v54dp72BMGfhb7eTfPpPR98gi3FkrNy2Q+yLeGbyLadHxQ/Wn4Z6M/6fAGx3g8boIeEDAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="новости отрасли">
+		<g id="вперед-назад копия">
+			<use id="Векторный смарт-объект" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+		</g>
+	</g>
+</svg>
