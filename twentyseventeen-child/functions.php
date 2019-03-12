@@ -14,4 +14,63 @@ add_filter('widget_text', 'do_shortcode');
 
 require_once (dirname(__FILE__) . '/sample/barebones-config.php');
 
+function get_slider_main( $name = null ) {
+
+	do_action( 'get_slider_main', $name );
+
+	$templates = array();
+	$name      = (string) $name;
+	if ( '' !== $name ) {
+		$templates[] = "slider-main-{$name}.php";
+	}
+
+	$templates[] = 'slider-main.php';
+
+	locate_template( $templates, true );
+}
+
+function get_slider_industry( $name = null ) {
+
+	do_action( 'get_slider_industry', $name );
+
+	$templates = array();
+	$name      = (string) $name;
+	if ( '' !== $name ) {
+		$templates[] = "slider-industry-{$name}.php";
+	}
+
+	$templates[] = 'slider-industry.php';
+
+	locate_template( $templates, true );
+}
+
+function get_announ_news( $name = null ) {
+
+	do_action( 'get_announ_news', $name );
+
+	$templates = array();
+	$name      = (string) $name;
+	if ( '' !== $name ) {
+		$templates[] = "announ-news-{$name}.php";
+	}
+
+	$templates[] = 'announ-news.php';
+
+	locate_template( $templates, true );
+}
+
+function get_on_this_category( $name = null ) {
+
+	do_action( 'get_on_this_category', $name );
+
+	$templates = array();
+	$name      = (string) $name;
+	if ( '' !== $name ) {
+		$templates[] = "on-this-category-{$name}.php";
+	}
+
+	$templates[] = 'on-this-category.php';
+
+	locate_template( $templates, true );
+}
 ?>

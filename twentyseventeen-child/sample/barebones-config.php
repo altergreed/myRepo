@@ -233,10 +233,23 @@
                 'id' => 'social-links',
                 'type' => 'slides',
                 'placeholder' => array(
-                'title' => __('This is a title', 'redux-framework-demo'),
-                'description' => __('Description Here', 'redux-framework-demo'),
-                'url' => __('Give us a link!', 'redux-framework-demo'),
+                'title' => __('Название', 'redux-framework-demo'),
+                'description' => __('Описание (необязательное поле)', 'redux-framework-demo'),
+                'url' => __('Ссылка', 'redux-framework-demo'),
                 ),
             ),
         ),
     ) );
+    Redux::setSection( $opt_name, array(
+            'title'      => __( 'А вот это интересно', 'redux-framework-demo' ),
+            'id'         => 'interested-section',
+            'subsection' => true,
+            'fields'     => array(
+                array(
+                'id'       => 'id_grey_slider',
+                'type'     => 'text',
+                'title'    => __('ID записи, которую необходимо выводить в сером блоке', 'redux-framework-demo'),
+                'default'  => '79'
+            )
+            ),
+        ) );

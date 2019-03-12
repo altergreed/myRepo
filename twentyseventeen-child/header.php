@@ -98,7 +98,7 @@
                     </ul>
                     <ul class="top-panel-text d-flex">
                         <li>
-                            <a class="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <a class="search-btn" href="search/"><i class="fa fa-search" aria-hidden="true"></i></a>
                         </li>
                         <?php if($redux_demo['display_subscribe']):?>
                         <span>|</span>
