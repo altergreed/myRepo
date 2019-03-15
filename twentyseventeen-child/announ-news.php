@@ -8,7 +8,7 @@
         $sticky = get_option( 'sticky_posts' );
         query_posts(
             array(
-                    'showposts' => 4,
+                    'showposts' => 6,
                     'post__not_in' =>$sticky,
                     'post_status'=>'future',));
         $i=1;?>
@@ -27,6 +27,7 @@
         <?php $i=$i+1;
         endwhile;
         endif;
-        wp_reset_query();?>
+        wp_reset_query();
+        wp_reset_postdata();?>
     </div>
 </div>

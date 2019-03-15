@@ -7,6 +7,7 @@ function child_twentyseventeen_scripts() {
     wp_enqueue_script( 'twentyseventeen-child-owl-script', get_theme_file_uri() . '/assets/js/owl.carousel.min.js' );
     wp_enqueue_script( 'twentyseventeen-child-sticky-kit', get_theme_file_uri() . '/assets/js/jquery.sticky-kit.min.js' );
     wp_enqueue_script( 'twentyseventeen-child-main-script', get_theme_file_uri() . '/assets/js/main.min.js' );
+    wp_enqueue_script( 'twentyseventeen-child-sticky-script', get_theme_file_uri() . '/assets/js/sticky.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'child_twentyseventeen_scripts' );
 
@@ -73,4 +74,58 @@ function get_on_this_category( $name = null ) {
 
 	locate_template( $templates, true );
 }
+
+function jpen_custom_post_sort( $post ){
+  add_meta_box(
+    'custom_post_sort_box',
+    'Позиция',
+    'jpen_custom_post_order',
+    'post' ,
+    'side'
+    );
+}
+add_action( 'add_meta_boxes', 'jpen_custom_post_sort' );
+
+/* Add a field to the metabox */
+function jpen_custom_post_order( $post ) {
+  wp_nonce_field( basename( __FILE__ ), 'jpen_custom_post_order_nonce' );
+  $current_pos = get_post_meta( $post->ID, 'custom_post_order', true); ?>
+  <p>Позиция элемента на главной странице</p>
+  <p><input type="number" name="pos" value="<?php echo $current_pos; ?>" /></p>
+  <?php
+}
+
+/* Save the input to post_meta_data */
+function jpen_save_custom_post_order( $post_id ){
+  if ( !isset( $_POST['jpen_custom_post_order_nonce'] ) || !wp_verify_nonce( $_POST['jpen_custom_post_order_nonce'], basename( __FILE__ ) ) ){
+    return;
+  }
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){
+    return;
+  }
+  if ( ! current_user_can( 'edit_post', $post_id ) ){
+    return;
+  }
+  if ( isset( $_REQUEST['pos'] ) ) {
+    update_post_meta( $post_id, 'custom_post_order', sanitize_text_field( $_POST['pos'] ) );
+  }
+}
+add_action( 'save_post', 'jpen_save_custom_post_order' );
+
+/* Add custom post order column to post list */
+function jpen_add_custom_post_order_column( $columns ){
+  return array_merge ( $columns,
+    array( 'pos' => 'Позиция', ));
+}
+add_filter('manage_posts_columns' , 'jpen_add_custom_post_order_column');
+
+/* Display custom post order in the post list */
+function jpen_custom_post_order_value( $column, $post_id ){
+  if ($column == 'pos' ){
+    echo '<p>' . get_post_meta( $post_id, 'custom_post_order', true) . '</p>';
+  }
+}
+add_action( 'manage_posts_custom_column' , 'jpen_custom_post_order_value' , 10 , 2 );
+
+
 ?>

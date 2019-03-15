@@ -6,36 +6,27 @@
  */
 
 get_header(); ?>
-
-<div class="blog-article mt-4">
+<div class="search-result mt-4">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-9">
             <?php if ( have_posts() ) : ?>
-
-            <h3><?php printf( __( 'Search Results for: %s', 'sydney' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
-
+            <h3><?php printf( __( 'Результаты поиска по запросу: %s'), '<span>' . get_search_query() . '</span>' ); ?></h3>
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'content', 'search' );
-				?>
+            <?php get_template_part( 'content', 'search' );?>
 
             <?php endwhile; ?>
-
-            <?php the_posts_navigation(); ?>
-
-            <?php else : ?>
-
-            <?php get_template_part( 'content', 'none' ); ?>
-
-            <?php endif; ?>
         </div>
+        <?php $pagi=get_the_posts_navigation();
+                    $pagi = preg_replace('~<h2.*?h2>~', '', $pagi);
+                    echo $pagi; ?>
+
+        <?php else : ?>
+
+        <?php get_template_part( 'content', 'none' ); ?>
+
+        <?php endif; ?>
         <?php get_sidebar(); ?>
     </div>
 </div>

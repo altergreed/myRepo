@@ -8,4 +8,7 @@
  */
 ?>
 
-content_search
+
+<?php the_title();?>
+<?php $content = get_the_excerpt();
+echo $content;?>

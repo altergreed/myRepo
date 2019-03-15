@@ -127,6 +127,7 @@
                                 );
                                 $menu = str_replace('current-menu-item', 'current-menu-item active', $menu );
                                 $menu = str_replace('<a href="', '<a class="nav-link" href="', $menu );
+                                $menu = str_replace('menu-item menu-item-type-taxonomy menu-item-object-category', 'menu-item menu-item-type-taxonomy menu-item-object-category nav-item', $menu );
                                 echo $menu;
                             ?>
                             </div>

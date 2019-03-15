@@ -1,7 +1,7 @@
 <div class="big-main-slider">
     <div id="big-main-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-           <?php
+            <?php
             $sticky = get_option('sticky_posts');
             rsort( $sticky );
             $sticky = array_slice( $sticky, 0, count($sticky));
@@ -9,23 +9,25 @@
             $i=1;
             if (have_posts()) :
                 while (have_posts()) : the_post();
-                    if($i==1){
-                        echo '<div class="carousel-item active">';
-                    } else{
-                        echo '<div class="carousel-item">';
-                    }
-                    the_post_thumbnail(full, array('class'=>'d-block w-100'));
-                    echo '<div class="carousel-caption">';
-                    $categories = get_the_category();
+                    if($i==1){?>
+            <div class="carousel-item active">
+                <?php } else{ ?>
+                <div class="carousel-item">
+                    <?php }?>
+                    <img src="<?=get_the_post_thumbnail_url();?>" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <div class="carousel-wrap d-flex align-items-start flex-column">
+                            <?php $categories = get_the_category();
                     if($categories[0]){
 	                   echo '<a class="btn-link white" href="' . get_category_link($categories[0]->term_id ) . '">'. $categories[0]->name . '</a>';
                     }?>
-            <div class="slide-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
-                    <?php echo '<div class="social-activity white"><span><i class="far fa-thumbs-up"></i></span><span class="count">123</span><span><i class="far fa-comment-dots"></i></span><span class="count">';
-                    comments_number( '0', '1', '%' );
-                    echo '</span></div></div></div>';
-                    $i=$i+1;
-                endwhile;
+                            <div class="slide-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></div>
+                            <div class="social-activity mt-auto white"><span><i class="far fa-thumbs-up"></i></span><span class="count">123</span><span><i class="far fa-comment-dots"></i></span><span class="count"><?php echo comments_number( '0', '1', '%' );?></span></div>
+                        </div>
+                    </div>
+                </div>
+                <?php $i=$i+1;
+            endwhile;
             endif;
             wp_reset_query();
             ?>

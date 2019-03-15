@@ -42,7 +42,7 @@
                     <div class="flex-column">
                    <?php
                         foreach($redux_demo['social-links'] as $link){
-                            echo '<li><a href="'.$link['url'].'"><img src="'.$link['image'].'"></a></li>';
+                            echo '<li><a target="_blank" href="'.$link['url'].'"><img src="'.$link['image'].'"></a></li>';
                         }
                     ?>
                         </div>

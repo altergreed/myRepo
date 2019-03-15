@@ -14,6 +14,7 @@
                                         the_post_thumbnail(full, array('class'=>'h-100'));
                                     ?>
                                     <div class="item-caption">
+                                       <div class="item-wrap d-flex align-items-start flex-column">
                                         <?php
                                             $categories = get_the_category();
                                             if($categories[0]){
@@ -21,10 +22,10 @@
                                             }
                                         ?>
                                         <div class="industry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                                        <div class="social-activity white">
+                                        <div class="social-activity mt-auto white">
                                             <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span><?php comments_number( '0', '1', '%' );?></span>
                                         </div>
-                                    </div>
+                                    </div></div>
                                 </div>
                             </div>
                         <?php $i=$i+1;?>
