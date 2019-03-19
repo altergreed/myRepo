@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 						'avatar_size' => 50,
 						'style'       => 'div',
 						'short_ping'  => true,
-						'reply_text'  => '<i class="fas fa-reply"></i>',
+						'reply_text'  => '<i class="fas fa-reply"></i> Ответить',
 					)
 				);
 			?>
@@ -82,7 +82,13 @@ if ( post_password_required() ) {
 //				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
 //			)
 //		);
-
+    else:?>
+    <div class="comment-title">
+        <?php
+				printf( _x( 'Комментарии (0)', 'comments title', 'twentyseventeen' ));
+			?>
+    </div>
+    <?
 	endif; // Check for have_comments().
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
@@ -108,4 +114,4 @@ if ( post_password_required() ) {
     );
 
 	?>
-</div><!-- #comments -->
+</div>

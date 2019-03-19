@@ -23,7 +23,7 @@
                                         ?>
                                         <div class="industry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                         <div class="social-activity mt-auto white">
-                                            <span><i class="far fa-thumbs-up"></i></span><span>123</span><span><i class="far fa-comment-dots"></i></span><span><?php comments_number( '0', '1', '%' );?></span>
+                                            <span><i class="far fa-thumbs-up"></i></span><span><?php if(function_exists('wp_ulike_get_post_likes')):?><?=wp_ulike_get_post_likes(get_the_ID());?><?php endif;?></span><span><i class="far fa-comment-dots"></i></span><span><?=$post->comment_count;?></span>
                                         </div>
                                     </div></div>
                                 </div>

@@ -26,8 +26,7 @@ while ( have_posts() ) : the_post();?>
                     }?>
                 <div class="small-new-title <?php if($i==2 || $i==4):?>white<?php endif;?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="social-activity mt-auto<?php if($i==2 || $i==4):?> white<?php endif;?>">
-                    <span><i class="far fa-thumbs-up"></i></span><span>123</span>
-                    <span><i class="far fa-comment-dots"></i></span><span><?=$post->comment_count;?></span>
+                    <span><i class="far fa-thumbs-up"></i></span><span><?php if(function_exists('wp_ulike_get_post_likes')):?><?=wp_ulike_get_post_likes(get_the_ID());?><?php endif;?></span><span><i class="far fa-comment-dots"></i></span><span><?=$post->comment_count;?></span>
                 </div></div>
                 <?php if($i==2 || $i==4):?>
             </div>
@@ -50,8 +49,7 @@ while ( have_posts() ) : the_post();?>
                     }?>
                 <div class="long-new-title white"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="social-activity mt-auto white">
-                    <span><i class="far fa-thumbs-up"></i></span><span>123</span>
-                    <span><i class="far fa-comment-dots"></i></span><span><?=$post->comment_count;?></span>
+                    <span><i class="far fa-thumbs-up"></i></span><span><?php if(function_exists('wp_ulike_get_post_likes')):?><?=wp_ulike_get_post_likes(get_the_ID());?><?php endif;?></span><span><i class="far fa-comment-dots"></i></span><span><?=$post->comment_count;?></span>
                 </div></div>
             </div>
         </div>
@@ -135,7 +133,7 @@ endwhile;
                                 <a href="<?=get_category_link($category[0]->cat_ID);?>" class="btn-link white"><?=$category[0]->cat_name;?></a>
                                 <div class="slide-title"><a href="<?=$post->guid;?>"><?=$post->post_title;?></a></div>
                                 <div class="social-activity white">
-                                    <span><i class="far fa-thumbs-up"></i></span><span class="count">123</span><span><i class="far fa-comment-dots"></i></span><span class="count"><?=$post->comment_count;?></span>
+                                    <span><i class="far fa-thumbs-up"></i></span><span><?php if(function_exists('wp_ulike_get_post_likes')):?><?=wp_ulike_get_post_likes(get_the_ID());?><?php endif;?></span><span><i class="far fa-comment-dots"></i></span><span><?=$post->comment_count;?></span>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +146,8 @@ endwhile;
 </div>
 
 <?php
-}?>
+}
+    wp_paginate();?>
 
 
 <?php get_footer(); ?>

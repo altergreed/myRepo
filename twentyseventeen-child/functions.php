@@ -13,6 +13,8 @@ add_action( 'wp_enqueue_scripts', 'child_twentyseventeen_scripts' );
 
 add_filter('widget_text', 'do_shortcode');
 
+add_theme_support( 'html5', array( 'search-form' ) );
+
 require_once (dirname(__FILE__) . '/sample/barebones-config.php');
 
 function get_slider_main( $name = null ) {
@@ -127,5 +129,16 @@ function jpen_custom_post_order_value( $column, $post_id ){
 }
 add_action( 'manage_posts_custom_column' , 'jpen_custom_post_order_value' , 10 , 2 );
 
+add_filter('wp_ulike_format_number','wp_ulike_new_format_number',10,3);
+function wp_ulike_new_format_number($value, $num, $plus){
+	if ($num >= 1000 && get_option('wp_ulike_format_number') == '1'):
+	$value = round($num/1000, 2) . 'K';
+	elseif($num==0):
+    $value=0;
+    else:
+	$value = $num;
+	endif;
+	return $value;
+}
 
 ?>
